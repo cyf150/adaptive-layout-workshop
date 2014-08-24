@@ -32,11 +32,11 @@ class MasterViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    self.title = "Weapons"
   }
 
 
   // MARK: - Segues
-
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "showDetail" {
         let indexPath = self.tableView.indexPathForSelectedRow()
