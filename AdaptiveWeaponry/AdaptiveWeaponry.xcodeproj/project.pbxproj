@@ -13,6 +13,8 @@
 		22850F9C19A999B300C60CD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22850F9A19A999B300C60CD4 /* Main.storyboard */; };
 		22850F9E19A999B300C60CD4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22850F9D19A999B300C60CD4 /* Images.xcassets */; };
 		22850FAA19A999B300C60CD4 /* AdaptiveWeaponryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22850FA919A999B300C60CD4 /* AdaptiveWeaponryTests.swift */; };
+		22850FB619A99A7D00C60CD4 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22850FB419A99A7D00C60CD4 /* Weapon.swift */; };
+		22850FB719A99A7D00C60CD4 /* WeaponCollection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22850FB519A99A7D00C60CD4 /* WeaponCollection.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		22850FA319A999B300C60CD4 /* AdaptiveWeaponryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdaptiveWeaponryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22850FA819A999B300C60CD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22850FA919A999B300C60CD4 /* AdaptiveWeaponryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveWeaponryTests.swift; sourceTree = "<group>"; };
+		22850FB419A99A7D00C60CD4 /* Weapon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		22850FB519A99A7D00C60CD4 /* WeaponCollection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WeaponCollection.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		22850F9119A999B300C60CD4 /* AdaptiveWeaponry */ = {
 			isa = PBXGroup;
 			children = (
+				22850FB319A99A6500C60CD4 /* Data Layer */,
 				22850F9419A999B300C60CD4 /* AppDelegate.swift */,
 				22850F9619A999B300C60CD4 /* MasterViewController.swift */,
 				22850F9819A999B300C60CD4 /* DetailViewController.swift */,
@@ -110,6 +115,15 @@
 				22850FA819A999B300C60CD4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22850FB319A99A6500C60CD4 /* Data Layer */ = {
+			isa = PBXGroup;
+			children = (
+				22850FB419A99A7D00C60CD4 /* Weapon.swift */,
+				22850FB519A99A7D00C60CD4 /* WeaponCollection.plist */,
+			);
+			name = "Data Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +208,7 @@
 			files = (
 				22850F9C19A999B300C60CD4 /* Main.storyboard in Resources */,
 				22850F9E19A999B300C60CD4 /* Images.xcassets in Resources */,
+				22850FB719A99A7D00C60CD4 /* WeaponCollection.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22850F9919A999B300C60CD4 /* DetailViewController.swift in Sources */,
+				22850FB619A99A7D00C60CD4 /* Weapon.swift in Sources */,
 				22850F9719A999B300C60CD4 /* MasterViewController.swift in Sources */,
 				22850F9519A999B300C60CD4 /* AppDelegate.swift in Sources */,
 			);
