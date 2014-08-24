@@ -19,6 +19,7 @@ import UIKit
 class MasterViewController: UITableViewController {
 
   var detailViewController: DetailViewController? = nil
+  let weaponProvider = WeaponProvider()
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -39,29 +40,27 @@ class MasterViewController: UITableViewController {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "showDetail" {
         let indexPath = self.tableView.indexPathForSelectedRow()
-        let object = objects[indexPath.row] as NSDate
         let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
-        controller.detailItem = object
+        let weapon = weaponProvider.weapons[indexPath.row];
+        controller.weapon = weapon
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem()
         controller.navigationItem.leftItemsSupplementBackButton = true
     }
   }
 
   // MARK: - Table View
-
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 1
   }
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return objects.count
+    return weaponProvider.weapons.count
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-
-    let object = objects[indexPath.row] as NSDate
-    cell.textLabel.text = object.description
+    let weapon = weaponProvider.weapons[indexPath.row]
+    cell.textLabel.text = weapon.name
     return cell
   }
 

@@ -17,26 +17,23 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-                            
-  @IBOutlet weak var detailDescriptionLabel: UILabel!
 
-
-  var detailItem: AnyObject? {
+  var weapon: Weapon? {
     didSet {
-        // Update the view.
+      // Update the view.
+      if view != nil {
         self.configureView()
+      }
     }
   }
-
+  
   func configureView() {
     // Update the user interface for the detail item.
-    if let detail: AnyObject = self.detailItem {
-        if let label = self.detailDescriptionLabel {
-            label.text = detail.description
-        }
+    if let weapon = self.weapon {
+      self.title = weapon.name
     }
   }
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
