@@ -18,10 +18,10 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
-
+  
   var window: UIWindow?
-
-
+  
+  
   func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
     // Override point for customization after application launch.
     let splitViewController = self.window!.rootViewController as UISplitViewController
@@ -30,20 +30,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     splitViewController.delegate = self
     return true
   }
-
+  
   // MARK: - Split view
-
+  
   func splitViewController(splitViewController: UISplitViewController!, collapseSecondaryViewController secondaryViewController:UIViewController!, ontoPrimaryViewController primaryViewController:UIViewController!) -> Bool {
-      if let secondaryAsNavController = secondaryViewController as? UINavigationController {
-          if let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController {
-              if topAsDetailController.weapon == nil {
-                  // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
-                  return true
-              }
-          }
+    if let secondaryAsNavController = secondaryViewController as? UINavigationController {
+      if let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController {
+        if topAsDetailController.weapon == nil {
+          // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+          return true
+        }
       }
-      return false
+    }
+    return false
   }
-
+  
 }
 
