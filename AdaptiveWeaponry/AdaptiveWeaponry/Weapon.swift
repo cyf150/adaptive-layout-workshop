@@ -24,7 +24,7 @@ struct Weapon {
   let imageName: String
   
   var image: UIImage {
-    return UIImage(named: imageName)
+    return UIImage(named: imageName)!
   }
   
   init(dictionary: [String:String]) {

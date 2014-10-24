@@ -41,9 +41,9 @@ class MasterViewController: UITableViewController {
     if segue.identifier == "showDetail" {
       let indexPath = self.tableView.indexPathForSelectedRow()
       let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
-      let weapon = weaponProvider.weapons[indexPath.row];
+      let weapon = weaponProvider.weapons[indexPath!.row];
       controller.weapon = weapon
-      controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem()
+      controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
       controller.navigationItem.leftItemsSupplementBackButton = true
     }
   }
